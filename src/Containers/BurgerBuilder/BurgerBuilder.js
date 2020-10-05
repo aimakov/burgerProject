@@ -14,14 +14,14 @@ class BurgerBuilder extends Component {
         ]
     }
 
-    inrease = (ingredientId) => {
+    increase = (ingredientId) => {
 
         const ingredientIndex = this.state.burger.findIndex(c => {
             return c.id === ingredientId;
         })
 
         const ingredient = {...this.state.burger[ingredientIndex]};
-
+        console.log(ingredient);
         ingredient.amount++;
 
         const ingredients = [...this.state.burger]
@@ -58,7 +58,7 @@ class BurgerBuilder extends Component {
             <Aux>
                 <Burger ingredients={this.state.burger}/>
                 
-                <BuildControls increase={this.inrease} decrease={this.decrease} ingredients={this.state.burger}/>
+                <BuildControls plus={this.increase} minus={this.decrease}/>
             </Aux>
         );
     }
