@@ -3,16 +3,16 @@ import classes from './BuildControls.css'
 import BuildControl from './BuildControl/BuildControl'
 
 const controls = [
-    { label: 'Salad', type: 'salad'},
-    { label: 'Meat', type: 'meat'},
-    { label: 'Bacon', type: 'bacon'},
-    { label: 'Cheese', type: 'cheese'},
+    { label: 'Salad', type: 'salad', price: 2},
+    { label: 'Meat', type: 'meat', price: 7},
+    { label: 'Bacon', type: 'bacon', price: 4},
+    { label: 'Cheese', type: 'cheese', price: 3},
 ]
 
 const BuildControls = (props) => (
     <div className={classes.BuildControls}>
         {controls.map(ctrl =>(
-            <BuildControl key={ctrl.label} label={ctrl.label} increase={() => props.plus(ctrl.type)} decrease={() => props.minus(ctrl.type)}/>
+            <BuildControl key={ctrl.label} label={ctrl.label} price={ctrl.price} increase={() => props.plus(ctrl.type)} decrease={() => props.minus(ctrl.type)}/>
         ))}
     </div>
 )
